@@ -1,0 +1,15 @@
+version: "3.6"
+services:
+  node:
+    build:
+      context: ./docker
+      args:
+        - TZ=${TZ}
+    ports:
+      - 18080:8080
+    volumes:
+      - ./work:/work
+    working_dir: /work
+    environment:
+      - TZ=${TZ}
+    tty: true
